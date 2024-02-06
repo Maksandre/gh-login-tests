@@ -12,5 +12,9 @@ export abstract class BasePage {
     await this.page.goto(url);
   }
 
+  async waitForURL(url = this.url) {
+    return this.page.waitForURL(url);
+  }
+
   abstract waitLoaded(): Promise<void>;
 }
