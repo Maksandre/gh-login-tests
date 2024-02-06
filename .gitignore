@@ -1,5 +1,12 @@
 node_modules
+
+# playwright
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# IDEs
+.vscode
+
+DS_Store
