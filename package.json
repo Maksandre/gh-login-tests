@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "install:all": "npm install && npx playwright install chromium",
     "codestyle": "prettier . --write",
     "lint": "eslint . --fix"
   },
