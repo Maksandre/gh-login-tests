@@ -1,0 +1,3 @@
+# Playwright tests example
+
+...
