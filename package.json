@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "install:all": "npm install && npx playwright install chromium",
+    "test": "npx playwright test",
     "codestyle": "prettier . --write",
     "lint": "eslint . --fix"
   },

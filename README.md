@@ -2,10 +2,18 @@
 
 ## TL;DR
 
-Run once to install dependencies and browsers:
+1. Create `.env` file from `.env.example` and configure all the environment variables
+
+2. Run once to install dependencies and browsers:
 
 ```sh
 npm run install:all
+```
+
+3. Run tests:
+
+```sh
+npm run test
 ```
 
 ## VS Code configuration
