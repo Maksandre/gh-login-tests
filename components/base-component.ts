@@ -1,12 +1,14 @@
 import { Locator, Page, expect } from "@playwright/test";
 
 export abstract class BaseComponent {
-  readonly click = this.self.click.bind(this);
-
   constructor(
     protected self: Locator,
     protected page: Page,
   ) {}
+
+  click(): Promise<void> {
+    return this.self.click();
+  }
 
   shouldBeVisible(): Promise<void> {
     return expect(this.self).toBeVisible();
@@ -14,5 +16,13 @@ export abstract class BaseComponent {
 
   shouldBeHidden(): Promise<void> {
     return expect(this.self).toBeHidden();
+  }
+
+  shouldBeDisabled() {
+    return expect(this.self).toBeDisabled();
+  }
+
+  shouldBeEnabled() {
+    return expect(this.self).toBeEnabled();
   }
 }

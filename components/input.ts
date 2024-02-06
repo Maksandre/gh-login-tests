@@ -7,14 +7,18 @@ export class Input extends BaseComponent {
   }
 
   fill(text: string): Promise<void> {
-    return this.self.fill(text);
+    return this.self.pressSequentially(text);
   }
 
   clear(): Promise<void> {
     return this.fill("");
   }
 
-  value(): Promise<string> {
+  getValue(): Promise<string> {
     return this.self.inputValue();
+  }
+
+  pressEnter(): Promise<void> {
+    return this.self.press("Enter");
   }
 }

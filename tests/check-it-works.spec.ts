@@ -1,12 +1,10 @@
-import test, { expect } from "@playwright/test";
-import { config } from "utils/config";
+import { test } from "fixtures/base-fixture";
 
-test("Check configuration works", async ({ page }) => {
-  await page.goto(config.BASE_URL);
+test("Check configuration works", async ({ loginPage, user }) => {
+  await loginPage.goto();
+  await loginPage.waitLoaded();
 
-  const loginPageTitle = page.getByRole("heading", {
-    name: "Sign in to GitHub",
-  });
-
-  await expect(loginPageTitle).toBeVisible();
+  await loginPage.loginInput.fill(user.email);
+  await loginPage.passwordInput.fill(user.password);
+  await loginPage.signInButton.click();
 });
