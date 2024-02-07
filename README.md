@@ -12,14 +12,28 @@ npm run install:all
 
 3. Run tests:
 
+- headless parallel mode
+
 ```sh
 npm run test
+```
+
+- headed serial mode
+
+```sh
+npm run test:headed
 ```
 
 4. See the results in the report
 
 ```sh
 npm run report
+```
+
+### ...or run in docker
+
+```sh
+npm run test:docker
 ```
 
 ## VS Code configuration

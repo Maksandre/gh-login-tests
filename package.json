@@ -5,6 +5,8 @@
   "scripts": {
     "install:all": "npm install && npx playwright install chromium",
     "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed --workers=1",
+    "test:docker": "docker compose up",
     "report": "npx playwright show-report",
     "codestyle": "prettier . --write",
     "lint": "eslint . --fix"
