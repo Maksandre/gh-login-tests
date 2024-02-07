@@ -1,10 +1,11 @@
-FROM node:16
+FROM mcr.microsoft.com/playwright:v1.41.1-jammy
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN ["npm", "run", "install:all"]
 COPY . .
-EXPOSE 3000
+RUN ["cp", ".env.example", ".env"]
+EXPOSE 9323
 
 CMD ["npm", "run", "test"]

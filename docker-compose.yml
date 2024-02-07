@@ -8,15 +8,7 @@ services:
     volumes:
       - .:/app
     command: npm run test
-    depends_on:
-      - app
+    ports:
+      - 9323:9323
     environment:
       - NODE_ENV=production
-
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
-    command: npm run install:all
