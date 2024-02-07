@@ -1,6 +1,5 @@
 import { test as base } from "@playwright/test";
-import { DashboardPage } from "pages/dashboard-page";
-import { LoginPage } from "pages/login-page";
+import { LoginPage, DashboardPage, LandingPage } from "pages";
 import { config } from "utils/config";
 import { User } from "utils/types";
 
@@ -11,6 +10,9 @@ export const test = base.extend<BaseFixture>({
   dashboardPage: async ({ page }, use) => {
     await use(new DashboardPage(page));
   },
+  landingPage: async ({ page }, use) => {
+    await use(new LandingPage(page));
+  },
   user: async ({}, use) => {
     await use(config.user);
   },
@@ -19,6 +21,7 @@ export const test = base.extend<BaseFixture>({
 type BaseFixture = {
   loginPage: LoginPage;
   dashboardPage: DashboardPage;
+  landingPage: LandingPage;
   user: User;
 };
 

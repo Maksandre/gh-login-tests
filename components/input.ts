@@ -1,7 +1,9 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
 import { BaseComponent } from "./base-component";
 
 export class Input extends BaseComponent {
+  locators = {};
+
   constructor(self: Locator, page: Page) {
     super(self, page);
   }
@@ -14,11 +16,11 @@ export class Input extends BaseComponent {
     return this.fill("");
   }
 
-  getValue(): Promise<string> {
-    return this.self.inputValue();
-  }
-
   pressEnter(): Promise<void> {
     return this.self.press("Enter");
+  }
+
+  shouldHaveValue(text: string): Promise<void> {
+    return expect(this.self).toHaveValue(text);
   }
 }
