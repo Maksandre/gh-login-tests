@@ -16,6 +16,12 @@ npm run install:all
 npm run test
 ```
 
+4. See the results in the report
+
+```sh
+npm run report
+```
+
 ## VS Code configuration
 
 1. Install the following extensions for VS Code:
