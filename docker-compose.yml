@@ -5,9 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - .:/app
     ports:
       - 9323:9323
-    environment:
-      - NODE_ENV=production
